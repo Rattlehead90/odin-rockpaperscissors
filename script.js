@@ -5,15 +5,21 @@ function computerPlay() {
     return options[randomlyGeneratedIndex(0, 2)].toUpperCase(); //Fetching an option from the array, combining the randomlyGeneratedIndex and options
 }
 
-function playRound(playerSelection, computerSelection) { 
-    playerSelection = prompt('Choose Rock, Paper or Scissors: ').toUpperCase();
-    computerSelection = computerPlay();
+
+
+
+
+function playRound() { 
+    let playerSelection = prompt('Choose Rock, Paper or Scissors: ').toUpperCase();
+    let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase();
+    let computerSelection = computerPlay();
+    let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase();
 
     if ((playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')) {
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        return `You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`;
     } else if ((computerSelection === 'PAPER' && playerSelection === 'ROCK') || (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')){
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return `You lose! ${computerSelectionToDisplay} beats ${playerSelectionToDisplay}`;
     } else {
-        return `It's a tie! ${computerSelection} and ${playerSelection}`;
+        return `It's a tie! ${computerSelectionToDisplay} and ${playerSelectionToDisplay}`;
     }
 }
