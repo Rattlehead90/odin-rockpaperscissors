@@ -10,10 +10,18 @@ function playRound(playerSelection, computerSelection) {
     let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
     let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
 
-    if ((playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')) { //Winning conditions for a player
+    if (
+    (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
+    (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || 
+    (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')
+    ) { //Winning conditions for a player
         console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`); 
         return 'w' //returns a winLoseIndicator
-    } else if ((computerSelection === 'PAPER' && playerSelection === 'ROCK') || (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')){ //Losing conditions for a player
+    } else if (
+        (computerSelection === 'PAPER' && playerSelection === 'ROCK') || 
+        (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || 
+        (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')
+        ){ //Losing conditions for a player
         console.log(`You lose! ${computerSelectionToDisplay} beats ${playerSelectionToDisplay}`);
         return 'l' //returns a winLoseIndicator
     } else {
