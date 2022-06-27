@@ -10,25 +10,25 @@ function playRound(playerSelection, computerSelection) {
     let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
     let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
 
-    if ((playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')) {
-        console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`);
-        return 'w'
-    } else if ((computerSelection === 'PAPER' && playerSelection === 'ROCK') || (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')){
+    if ((playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')) { //Winning conditions for a player
+        console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`); 
+        return 'w' //returns a winLoseIndicator
+    } else if ((computerSelection === 'PAPER' && playerSelection === 'ROCK') || (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')){ //Losing conditions for a player
         console.log(`You lose! ${computerSelectionToDisplay} beats ${playerSelectionToDisplay}`);
-        return 'l'
+        return 'l' //returns a winLoseIndicator
     } else {
         console.log(`It's a tie! ${computerSelectionToDisplay} and ${playerSelectionToDisplay}`);
-        return 't'
+        return 't' //returns a winLoseIndicator
     }
 }
 
 function game() {
-    let playerScore = 0;
+    let playerScore = 0; //Create score counters
     let computerScore = 0;
-    let winLoseIndicator = '';
+    let winLoseIndicator = ''; //Instantiate a winLoseIndicator
 
     while ((playerScore < 5) && (computerScore < 5)) {
-        let playerSelection = prompt('Choose Rock, Paper or Scissors: ').toUpperCase();
+        let playerSelection = prompt('Choose Rock, Paper or Scissors: ').toUpperCase(); //Ask for an input
         let computerSelection = computerPlay();
         winLoseIndicator = playRound(playerSelection, computerSelection);
         if (winLoseIndicator === 'w') {
