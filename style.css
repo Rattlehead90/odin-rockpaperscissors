@@ -1,8 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700;900&display=swap');
+
 body {
     background-color: #02182B;
     color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px 0px 200px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+}
+
+header {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #F1FAEE;
 }
 
 .invert {
     filter: invert(100%);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.battlefield {
+    flex: 1;
+}
+
+.player-icon {
+    margin-right: 70px;
+}
+
+.computer-icon {
+    margin-left: 70px;
+}
+
+.option {
+    margin: 50px 0;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
