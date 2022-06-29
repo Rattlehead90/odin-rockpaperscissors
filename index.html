@@ -5,8 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <script src="script.js"></script>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+        <div class="player-icon">
+            <img src="./images/user.png" alt="Player icon">
+        </div>
+        <div class="options-column">
+            <div class="option" id="rock-player">
+                <img src="./images/rock.png" alt="Rock">
+            </div>
+            <div class="option" id="paper-player">
+                <img src="./images/paper.png" alt="Paper">
+            </div>
+            <div class="option" id="scissors-player">
+                <img src="./images/scissors.png" alt="Scissors">
+            </div>
+        </div>
+        <div class="battlefield">
+            <!-- LINES BETWEEN CHOICES GO HERE -->
+        </div>
+        <div class="options-column">
+            <div class="option" id="rock-computer">
+                <img src="./images/rock.png" alt="Rock">
+            </div>
+            <div class="option" id="paper-computer">
+                <img src="./images/paper.png" alt="Paper">
+            </div>
+            <div class="option" id="scissors-computer">
+                <img src="./images/scissors.png" alt="Scissors">
+            </div>
+        </div>
+        <div class="computer-icon">
+            <img src="./images/computer.png" alt="Computer">
+        </div>
+        <div class="score">
+            <div class="score-box" id="score-box-player">
+            </div>
+            <div id="deliminator">
+                |
+            </div>
+            <div class="score-box" id="score-box-computer">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
