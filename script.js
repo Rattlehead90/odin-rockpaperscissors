@@ -21,10 +21,10 @@ function playRound(playerSelection, computerSelection) {
             (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || 
             (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')
         ){ //Losing conditions for a player
-        console.log(`You lose! ${computerSelectionToDisplay} beats ${playerSelectionToDisplay}`);
+        console.log(`You lose! ${playerSelectionToDisplay} is beaten by ${computerSelectionToDisplay}`);
         return 'l' //returns a winLoseIndicator
     } else {
-        console.log(`It's a tie! ${computerSelectionToDisplay} and ${playerSelectionToDisplay}`);
+        console.log(`It's a tie! ${playerSelectionToDisplay} and ${computerSelectionToDisplay}`);
         return 't' //returns a winLoseIndicator
     }
 }
