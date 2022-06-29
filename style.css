@@ -57,18 +57,22 @@ main {
     margin: 50px 0;
 }
 
-#rock-player:hover,
-#rock-computer:hover {
-    filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%);
+#rock-player:active,
+#paper-player:active,
+#scissors-player:active {
+    transform: rotate(20deg);
 }
 
-#paper-player:hover,
-#paper-computer:hover {
+#rock-player:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%);
+    
+}
+
+#paper-player:hover {
     filter: brightness(0) saturate(100%) invert(45%) sepia(65%) saturate(2828%) hue-rotate(178deg) brightness(97%) contrast(99%);
 }
 
-#scissors-player:hover,
-#scissors-computer:hover {
+#scissors-player:hover {
     filter: brightness(0) saturate(100%) invert(81%) sepia(74%) saturate(5051%) hue-rotate(354deg) brightness(101%) contrast(100%);
 }
 
