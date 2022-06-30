@@ -18,12 +18,18 @@ header {
     gap: 35px;
 }
 
+.instruction, 
 .signature {
     font-size: 16pt;
     font-style: normal;
     color: hsla(0, 0%, 100%, 50%);
     text-align: center;
-    margin-top: -40px;
+    margin-top: -60px;
+}
+
+.signature {
+    margin: 0;
+    font-size: 10pt;
 }
 
 #rock:hover {
