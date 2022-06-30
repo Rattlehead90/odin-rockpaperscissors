@@ -18,6 +18,14 @@ header {
     gap: 35px;
 }
 
+.signature {
+    font-size: 16pt;
+    font-style: normal;
+    color: hsla(0, 0%, 100%, 50%);
+    text-align: center;
+    margin-top: -40px;
+}
+
 #rock:hover {
     color: #D7263D;
 }
@@ -93,6 +101,8 @@ main {
 }
 
 /*JS classes */
+
+/*Change game log (middle of the page)*/
 
 .game {
     background-color: red;
