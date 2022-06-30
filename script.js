@@ -17,13 +17,31 @@ function computerPlay() {
     return computerSelection;
 }
 
+const battlefield = document.querySelector('.battlefield');
+
+function logGame(playerSelection, computerSelection) {
+    const game = document.createElement('div');
+    game.classList.add('game');
+    const playerScore = document.createElement('div');
+    playerScore.classList.add('score-interim');
+    const computerScore = document.createElement('div');
+    computerScore.classList.add('score-interim');
+
+    playerScore.textContent = `${playerSelection.charAt(0)}`;
+    computerScore.textContent = `${computerSelection.charAt(0)}`;
+
+    battlefield.appendChild(game);
+    game.appendChild(playerScore);
+    game.appendChild(computerScore);
+}
+
 function clearAnimations() {
-        rockComputer.style.removeProperty('filter');
-        rockComputer.setAttribute('style', 'transform:rotate(0deg);');
-        paperComputer.style.removeProperty('filter');
-        paperComputer.setAttribute('style', 'transform:rotate(0deg);');
-        scissorsComputer.style.removeProperty('filter');
-        scissorsComputer.setAttribute('style', 'transform:rotate(0deg);');
+    rockComputer.style.removeProperty('filter');
+    rockComputer.setAttribute('style', 'transform:rotate(0deg);');
+    paperComputer.style.removeProperty('filter');
+    paperComputer.setAttribute('style', 'transform:rotate(0deg);');
+    scissorsComputer.style.removeProperty('filter');
+    scissorsComputer.setAttribute('style', 'transform:rotate(0deg);');
 }
 
 const rockPlayer = document.querySelector('.rock-player');
@@ -37,6 +55,7 @@ function playRound(playerSelection) {
     let computerSelection = computerPlay();
     let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
     let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
+    logGame(playerSelection, computerSelection);
 
     if (
             (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
