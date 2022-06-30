@@ -11,7 +11,6 @@ body {
 }
 
 header {
-    margin-bottom: 30px;
     text-align: center;
     color: #F1FAEE;
     display: flex;
@@ -47,7 +46,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
-    padding-top: 50px;
+    padding: 50px 30px 0 30px;
 }
 
 .player-icon {
@@ -100,9 +99,12 @@ main {
     display: flex;
     justify-content: center;
     margin: 0 50px;
+    border-radius: 30px;
+    margin: 3px;
+    font-size: 22pt;
 }
 
 .score-interim {
-    width: 400px;
+    width: 200px;
     text-align: center;
 }
