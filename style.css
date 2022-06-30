@@ -124,3 +124,25 @@ main {
     width: 200px;
     text-align: center;
 }
+
+.reset-button {
+    text-align: center;
+    font-size: 18pt;
+    color: #02182B;
+    background-color: #F1FAEE;
+    margin: 10px 685px;
+    border-radius: 8px;
+}
+
+.reset-button:hover {
+    background-color: white;
+    color: #D7263D;
+    transition: 0.2s;
+    margin-left: 670px;
+    margin-right: 670px;
+}
+
+.reset-button:active {
+    margin-top: 2px;
+    transition: 0.1s;
+}

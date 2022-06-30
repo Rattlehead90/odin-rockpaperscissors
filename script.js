@@ -98,6 +98,7 @@ function changeScore(winLoseIndicator) {
     }
 }
 
+
 //Buttons' functionality 
 rockPlayer.addEventListener('click', () => {
     playRound('ROCK');
@@ -111,3 +112,10 @@ scissorsPlayer.addEventListener('click', () => {
     playRound('SCISSORS');
 })
 
+const resetButton = document.querySelector('.reset-button');
+
+resetButton.addEventListener('click', () => {
+    while (battlefield.firstChild) {
+        battlefield.removeChild(battlefield.lastChild);
+    }
+})
