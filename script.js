@@ -117,5 +117,7 @@ const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', () => {
     while (battlefield.firstChild) {
         battlefield.removeChild(battlefield.lastChild);
+        playerScoreBox.textContent = 0;
+        computerScoreBox.textContent = 0;
     }
 })
