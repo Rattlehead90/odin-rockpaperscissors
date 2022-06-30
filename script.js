@@ -2,7 +2,28 @@ const options = ['Rock', 'Paper', 'Scissors']; //An array containing all possibl
 
 function computerPlay() { 
     computerSelection = options[Math.floor(Math.random() * (3))].toUpperCase(); 
+    if (computerSelection === 'ROCK') {
+        rockComputer.setAttribute('style', 'filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%); transform:rotate(-20deg);');
+        setTimeout(clearAnimations, 500);
+    }
+    if (computerSelection === 'PAPER') {
+        paperComputer.setAttribute('style', 'filter: brightness(0) saturate(100%) invert(45%) sepia(65%) saturate(2828%) hue-rotate(178deg) brightness(97%) contrast(99%); transform:rotate(-20deg);')
+        setTimeout(clearAnimations, 500);
+    }
+    if (computerSelection === 'SCISSORS') {
+        scissorsComputer.setAttribute('style', 'filter: brightness(0) saturate(100%) invert(81%) sepia(74%) saturate(5051%) hue-rotate(354deg) brightness(101%) contrast(100%); transform:rotate(-20deg);')
+        setTimeout(clearAnimations, 500);
+    }
     return computerSelection;
+}
+
+function clearAnimations() {
+        rockComputer.style.removeProperty('filter');
+        rockComputer.setAttribute('style', 'transform:rotate(0deg);');
+        paperComputer.style.removeProperty('filter');
+        paperComputer.setAttribute('style', 'transform:rotate(0deg);');
+        scissorsComputer.style.removeProperty('filter');
+        scissorsComputer.setAttribute('style', 'transform:rotate(0deg);');
 }
 
 const rockPlayer = document.querySelector('.rock-player');
@@ -13,7 +34,7 @@ const paperComputer = document.querySelector('.paper-computer');
 const scissorsComputer = document.querySelector('.scissors-computer');
 
 function playRound(playerSelection) { 
-    computerSelection = computerPlay();
+    let computerSelection = computerPlay();
     let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
     let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
 
@@ -24,16 +45,12 @@ function playRound(playerSelection) {
     ) { //Winning conditions for a player
         console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`); 
         return 'w' //returns a winLoseIndicator
-    } else if (
-            (computerSelection === 'PAPER' && playerSelection === 'ROCK') || 
-            (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') || 
-            (computerSelection === 'ROCK' && playerSelection === 'SCISSORS')
-        ){ //Losing conditions for a player
-        console.log(`You lose! ${playerSelectionToDisplay} is beaten by ${playerSelectionToDisplay}`);
-        return 'l' //returns a winLoseIndicator
-    } else {
-        console.log(`It's a tie! ${playerSelectionToDisplay} and ${playerSelectionToDisplay}`);
+    } else if (playerSelection === computerSelection){ //Tie conditions for a player
+        console.log(`It's a tie! ${playerSelectionToDisplay} and ${computerSelectionToDisplay}`);
         return 't' //returns a winLoseIndicator
+    } else {
+        console.log(`You lose! ${playerSelectionToDisplay} is beaten by ${computerSelectionToDisplay}`);
+        return 'l' //returns a winLoseIndicator
     }
 }
 

@@ -69,6 +69,24 @@ main {
     transform: rotate(20deg);
 }
 
+.rock-computer:active,
+.paper-computer:active,
+.scissors-computer:active {
+    transform: rotate(-20deg);
+}
+
+.rock-computer:active {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%);
+}
+
+.paper-computer:active {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(65%) saturate(2828%) hue-rotate(178deg) brightness(97%) contrast(99%);
+}
+
+.scissors-computer:active {
+    filter: brightness(0) saturate(100%) invert(81%) sepia(74%) saturate(5051%) hue-rotate(354deg) brightness(101%) contrast(100%);
+}
+
 .rock-player:hover {
     filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%);
     
