@@ -15,6 +15,7 @@ function computerPlay() {
         setTimeout(clearAnimations, 500);
     }
     return computerSelection;
+
 }
 
 const battlefield = document.querySelector('.battlefield');
@@ -109,3 +110,4 @@ paperPlayer.addEventListener('click', () => {
 scissorsPlayer.addEventListener('click', () => {
     playRound('SCISSORS');
 })
+
