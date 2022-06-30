@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700;900&display=swap');
+
+body {
+    background-color: #02182B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px 0px 200px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 36px;
+}
+
+header {
+    text-align: center;
+    color: #F1FAEE;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.instruction, 
+.signature {
+    font-size: 16pt;
+    font-style: normal;
+    color: hsla(0, 0%, 100%, 50%);
+    text-align: center;
+    margin-top: -60px;
+}
+
+.signature {
+    margin: 0;
+    font-size: 10pt;
+}
+
+#rock:hover {
+    color: #D7263D;
+}
+
+#paper:hover {
+    color: #0197f6;
+}
+
+#scissors:hover {
+    color: #FFBA08;
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.battlefield {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding: 50px 30px 0 30px;
+}
+
+.player-icon {
+    margin-right: 70px;
+}
+
+.computer-icon {
+    margin-left: 70px;
+}
+
+.options-column > li {
+    margin: 50px 0;
+}
+
+.options-column {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rock-player:active,
+.paper-player:active,
+.scissors-player:active {
+    transform: rotate(20deg);
+}
+
+.rock-player:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(6053%) hue-rotate(338deg) brightness(86%) contrast(96%);
+    
+}
+
+.paper-player:hover {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(65%) saturate(2828%) hue-rotate(178deg) brightness(97%) contrast(99%);
+}
+
+.scissors-player:hover {
+    filter: brightness(0) saturate(100%) invert(81%) sepia(74%) saturate(5051%) hue-rotate(354deg) brightness(101%) contrast(100%);
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/*JS classes */
+
+/*Change game log (middle of the page)*/
+
+.game {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    margin: 0 50px;
+    border-radius: 30px;
+    margin: 3px;
+    font-size: 22pt;
+}
+
+.score-interim {
+    width: 200px;
+    text-align: center;
+}
