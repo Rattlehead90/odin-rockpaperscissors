@@ -19,7 +19,7 @@ function computerPlay() {
 
 const battlefield = document.querySelector('.battlefield');
 
-function logGame(playerSelection, computerSelection) {
+function logGame(playerSelection, computerSelection, winLoseIndicator) {
     const game = document.createElement('div');
     game.classList.add('game');
     const playerScore = document.createElement('div');
@@ -27,12 +27,20 @@ function logGame(playerSelection, computerSelection) {
     const computerScore = document.createElement('div');
     computerScore.classList.add('score-interim');
 
-    playerScore.textContent = `${playerSelection.charAt(0)}`;
-    computerScore.textContent = `${computerSelection.charAt(0)}`;
+    playerScore.textContent = `${playerSelection}`;
+    computerScore.textContent = `${computerSelection}`;
 
     battlefield.appendChild(game);
     game.appendChild(playerScore);
     game.appendChild(computerScore);
+
+    if (winLoseIndicator === 'w') {
+        game.setAttribute('style', 'background-color: #0197f6')
+    } else if (winLoseIndicator === 'l') {
+        game.setAttribute('style', 'background-color: #D7263D')
+    } else {
+        game.setAttribute('style', 'background-color: #FFBA08')
+    }
 }
 
 function clearAnimations() {
@@ -55,24 +63,25 @@ function playRound(playerSelection) {
     let computerSelection = computerPlay();
     let playerSelectionToDisplay = playerSelection.charAt(0) + playerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
     let computerSelectionToDisplay = computerSelection.charAt(0) + computerSelection.slice(1).toLowerCase(); //Create a more polished version of an option name 
-    logGame(playerSelection, computerSelection);
-
+    let winLoseIndicator = '';
+    
     if (
-            (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
-            (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || 
-            (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')
-    ) { //Winning conditions for a player
-        console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`); 
-        return 'w' //returns a winLoseIndicator
-    } else if (playerSelection === computerSelection){ //Tie conditions for a player
-        console.log(`It's a tie! ${playerSelectionToDisplay} and ${computerSelectionToDisplay}`);
-        return 't' //returns a winLoseIndicator
-    } else {
-        console.log(`You lose! ${playerSelectionToDisplay} is beaten by ${computerSelectionToDisplay}`);
-        return 'l' //returns a winLoseIndicator
+        (playerSelection === 'PAPER' && computerSelection === 'ROCK') || 
+        (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') || 
+        (playerSelection === 'ROCK' && computerSelection === 'SCISSORS')
+        ) { //Winning conditions for a player
+            console.log(`You win! ${playerSelectionToDisplay} beats ${computerSelectionToDisplay}`); 
+            winLoseIndicator = 'w'; //returns a winLoseIndicator
+        } else if (playerSelection === computerSelection){ //Tie conditions for a player
+            console.log(`It's a tie! ${playerSelectionToDisplay} and ${computerSelectionToDisplay}`);
+            winLoseIndicator = 't';
+        } else {
+            console.log(`You lose! ${playerSelectionToDisplay} is beaten by ${computerSelectionToDisplay}`);
+            winLoseIndicator = 'l'; //returns a winLoseIndicator
+        }
+        logGame(playerSelection, computerSelection, winLoseIndicator);
     }
-}
-
+    
 // function game() {
 //     let playerScore = 0; //Create score counters
 //     let computerScore = 0;

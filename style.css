@@ -98,6 +98,11 @@ main {
 .game {
     background-color: red;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 50px;
+}
+
+.score-interim {
+    width: 400px;
+    text-align: center;
 }
